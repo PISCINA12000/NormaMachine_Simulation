@@ -132,7 +132,7 @@ public class Principal {
                     System.out.print("Resultado da Multiplicação: ");
                     maquina.exibir(numero);
                     System.out.print("Valor Preservado de B: ");
-                    maquina.exibir(c);
+                    maquina.exibir(b);
                     continuar();
                     break;
                 }

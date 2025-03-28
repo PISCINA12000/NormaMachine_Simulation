@@ -29,7 +29,7 @@ public class MaquinaNorma {
     }
 
     // Métodos
-    public Numero soma(Numero x, Numero y) {
+    public Numero soma(Numero x, Numero y)  {
         // ira somar dois numeros e retornar
 
         if(!this.isNegativo(x) && !this.isNegativo(y)){
@@ -184,101 +184,101 @@ public class MaquinaNorma {
         x.setSinal(0);
     }
 
-    public Numero multiplica(Numero x, Numero y) {
+    public Numero multiplica(Numero a, Numero b) {
         // realiza a multiplicação e retorna um numero inteiro
-        Numero soma = new Numero(), aux = new Numero();
+        Numero c = new Numero(), d = new Numero();
 
-        this.zerar(aux);
-        while(!this.isZero(y)){
-            y.setMagnitude(y.getMagnitude()-1);
-            aux.setMagnitude(aux.getMagnitude()+1);
+        zerar(d);
+        //c pega o valor de a
+        zerar(c);
+        System.out.println("A1 "+"A2  "+"B1 "+"B2  "+"C1 "+"C2  "+"D1 "+"D2 ");
+        while(!isZero(a)){
+            c.setMagnitude(c.getMagnitude()+1);
+            a.setMagnitude(a.getMagnitude()-1);
+            System.out.println(a.getSinal()+" "+a.getMagnitude()+"    "+b.getSinal()+"  "+b.getMagnitude()+"    "+c.getSinal()+"  "+c.getMagnitude()+"   "+d.getSinal()+"  "+d.getMagnitude());
         }
 
-        while(!this.isZero(x)){
-            while (!this.isZero(y)) {
-                y.setMagnitude(y.getMagnitude() - 1);
+        //multiplicacao
+        while(!isZero(c)){
+            //d pegar o valor de b
+            while(!isZero(b)){
+                d.setMagnitude(d.getMagnitude()+1);
+                b.setMagnitude(b.getMagnitude()-1);
+                System.out.println(a.getSinal()+" "+a.getMagnitude()+"    "+b.getSinal()+"  "+b.getMagnitude()+"    "+c.getSinal()+"  "+c.getMagnitude()+"   "+d.getSinal()+"  "+d.getMagnitude());;
             }
-            while(!this.isZero(aux)){
-                aux.setMagnitude(aux.getMagnitude()-1);
-                y.setMagnitude(y.getMagnitude()+1);
+            while(!isZero(d)){
+                a.setMagnitude(a.getMagnitude()+1);
+                d.setMagnitude(d.getMagnitude()-1);
+                b.setMagnitude(b.getMagnitude()+1);
+                System.out.println(a.getSinal()+" "+a.getMagnitude()+"    "+b.getSinal()+"  "+b.getMagnitude()+"    "+c.getSinal()+"  "+c.getMagnitude()+"   "+d.getSinal()+"  "+d.getMagnitude());
             }
-            while(!this.isZero(y)){
-                soma.setMagnitude(soma.getMagnitude()+1);
-                y.setMagnitude(y.getMagnitude()-1);
-                aux.setMagnitude(aux.getMagnitude()+1);
-                System.out.println("X="+x.getMagnitude() + " Y="+y.getMagnitude());
-            }
-            x.setMagnitude(x.getMagnitude()-1);
+            c.setMagnitude(c.getMagnitude()-1);
+            System.out.println(a.getSinal()+" "+a.getMagnitude()+"    "+b.getSinal()+"  "+b.getMagnitude()+"    "+c.getSinal()+"  "+c.getMagnitude()+"   "+d.getSinal()+"  "+d.getMagnitude());
         }
 
         //verifica o sinal
-        if(!this.isNegativo(x) && !this.isNegativo(y)){
+        if(!this.isNegativo(a) && !this.isNegativo(b)){
             // os dois são positivos
-            soma.setSinal(0);
+            a.setSinal(0);
         }
         else{
-            if(this.isNegativo(x) && this.isNegativo(y)){
+            if(this.isNegativo(a) && this.isNegativo(b)){
                 // os dois são negativos
-                soma.setSinal(0);
+                a.setSinal(0);
             }
             else
-                soma.setSinal(1);
+                a.setSinal(1);
         }
-
-        return soma;
+        return a;
     }
 
-    public Numero multiplicaPreserva(Numero x, Numero y, Numero z) {
+    public Numero multiplicaPreserva(Numero a, Numero b, Numero c) {
         // realiza a multiplicação e retorna um numero inteiro
-        Numero soma = new Numero();
+        Numero d = new Numero();
 
-        this.zerar(soma);
-
-        //preservar o conteúdo de 'y'
-        this.zerar(z);
-        while(!this.isZero(y)){
-            y.setMagnitude(y.getMagnitude()-1);
-            z.setMagnitude(z.getMagnitude()+1);
-        }
-        if(this.isNegativo(y)){
-            z.setSinal(1);
-        }
-        else{
-            z.setSinal(0);
+        zerar(d);
+        //c pega o valor de a
+        zerar(c);
+        System.out.println("A1 "+"A2  "+"B1 "+"B2  "+"C1 "+"C2  "+"D1 "+"D2 ");
+        while(!isZero(a)){
+            c.setMagnitude(c.getMagnitude()+1);
+            a.setMagnitude(a.getMagnitude()-1);
+            System.out.println(a.getSinal()+" "+a.getMagnitude()+"    "+b.getSinal()+"  "+b.getMagnitude()+"    "+c.getSinal()+"  "+c.getMagnitude()+"   "+d.getSinal()+"  "+d.getMagnitude());
         }
 
-        while(!this.isZero(x)){
-            while (!this.isZero(y)) {
-                y.setMagnitude(y.getMagnitude() - 1);
+        //multiplicacao
+        while(!isZero(c)){
+            //d pegar o valor de b
+            while(!isZero(b)){
+                d.setMagnitude(d.getMagnitude()+1);
+                b.setMagnitude(b.getMagnitude()-1);
+                System.out.println(a.getSinal()+" "+a.getMagnitude()+"    "+b.getSinal()+"  "+b.getMagnitude()+"    "+c.getSinal()+"  "+c.getMagnitude()+"   "+d.getSinal()+"  "+d.getMagnitude());;
             }
-            while(!this.isZero(z)){
-                z.setMagnitude(z.getMagnitude()-1);
-                y.setMagnitude(y.getMagnitude()+1);
+            while(!isZero(d)){
+                a.setMagnitude(a.getMagnitude()+1);
+                d.setMagnitude(d.getMagnitude()-1);
+                b.setMagnitude(b.getMagnitude()+1);
+                System.out.println(a.getSinal()+" "+a.getMagnitude()+"    "+b.getSinal()+"  "+b.getMagnitude()+"    "+c.getSinal()+"  "+c.getMagnitude()+"   "+d.getSinal()+"  "+d.getMagnitude());
             }
-            while(!this.isZero(y)){
-                soma.setMagnitude(soma.getMagnitude()+1);
-                y.setMagnitude(y.getMagnitude()-1);
-                z.setMagnitude(z.getMagnitude()+1);
-                System.out.println("X="+x.getMagnitude() + " Y="+y.getMagnitude());
-            }
-            x.setMagnitude(x.getMagnitude()-1);
+            c.setMagnitude(c.getMagnitude()-1);
+            System.out.println(a.getSinal()+" "+a.getMagnitude()+"    "+b.getSinal()+"  "+b.getMagnitude()+"    "+c.getSinal()+"  "+c.getMagnitude()+"   "+d.getSinal()+"  "+d.getMagnitude());
         }
+
 
         //verifica o sinal
-        if(!this.isNegativo(x) && !this.isNegativo(y)){
+        if(!this.isNegativo(a) && !this.isNegativo(b)){
             // os dois são positivos
-            soma.setSinal(0);
+            a.setSinal(0);
         }
         else{
-            if(this.isNegativo(x) && this.isNegativo(y)){
+            if(this.isNegativo(a) && this.isNegativo(b)){
                 // os dois são negativos
-                soma.setSinal(0);
+                a.setSinal(0);
             }
             else
-                soma.setSinal(1);
+                a.setSinal(1);
         }
-
-        return soma;
+        return a;
     }
 
     public Numero ler(){
