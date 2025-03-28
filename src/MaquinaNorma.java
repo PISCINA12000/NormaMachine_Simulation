@@ -167,8 +167,8 @@ public class MaquinaNorma {
     }
 
     public boolean isNegativo(Numero x) {
-        // retorna se o numero é negatvo
-        return x.getSinal() == 1;
+        // retorna se o numero é negativo
+        return !(x.getSinal() == 0);
     }
 
     public boolean isZero(Numero x) {
